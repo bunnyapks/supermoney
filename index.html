@@ -1,0 +1,986 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APK Detail | Bunny Apks Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="../../i.ibb.co/YFWbB87G/image.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="../../cdn.counter.dev/script.js" data-id="90b09118-96c6-4f11-871c-96ab1e75263f" data-utcoffset="5"></script>
+    <script src="../../cdn.jsdelivr.net/gh/NAUGHTY-BRAND/js-assets%40main/inspect-blocker.js" async="" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --neon-cyan: #00FFFF;
+            --neon-pink: #FF00FF;
+            --neon-green: #00FF00;
+            --neon-purple: #8B5CF6;
+            --neon-orange: #FF6B35;
+            --neon-yellow: #FFFF00;
+            --neon-blue: #0080FF;
+            --dark-bg: #0A0A0A;
+            --card-bg: #1A1A1A;
+            --text-primary: #FFFFFF;
+            --text-secondary: #CCCCCC;
+            --text-muted: #888888;
+            --glass-bg: rgba(26, 26, 26, 0.8);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--dark-bg);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        .background-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            animation: float 12s infinite linear;
+            filter: blur(0.5px);
+        }
+
+        .particle.type-1 {
+            width: 4px;
+            height: 4px;
+            background: var(--neon-cyan);
+            box-shadow: 0 0 20px var(--neon-cyan), 0 0 40px var(--neon-cyan);
+        }
+
+        .particle.type-2 {
+            width: 3px;
+            height: 3px;
+            background: var(--neon-pink);
+            box-shadow: 0 0 15px var(--neon-pink), 0 0 30px var(--neon-pink);
+        }
+
+        .particle.type-3 {
+            width: 5px;
+            height: 5px;
+            background: var(--neon-green);
+            box-shadow: 0 0 25px var(--neon-green), 0 0 50px var(--neon-green);
+        }
+
+        .particle.type-4 {
+            width: 2px;
+            height: 2px;
+            background: var(--neon-purple);
+            box-shadow: 0 0 12px var(--neon-purple), 0 0 24px var(--neon-purple);
+        }
+
+        .particle.type-5 {
+            width: 3.5px;
+            height: 3.5px;
+            background: var(--neon-orange);
+            box-shadow: 0 0 18px var(--neon-orange), 0 0 36px var(--neon-orange);
+        }
+
+        .particle.type-6 {
+            width: 2.5px;
+            height: 2.5px;
+            background: var(--neon-blue);
+            box-shadow: 0 0 14px var(--neon-blue), 0 0 28px var(--neon-blue);
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) translateX(0) rotate(0deg) scale(0);
+                opacity: 0;
+            }
+            5% {
+                opacity: 1;
+                transform: translateY(95vh) translateX(10px) rotate(18deg) scale(1);
+            }
+            95% {
+                opacity: 1;
+                transform: translateY(5vh) translateX(150px) rotate(342deg) scale(1);
+            }
+            100% {
+                transform: translateY(-5vh) translateX(200px) rotate(360deg) scale(0);
+                opacity: 0;
+            }
+        }
+
+        .geometric-shape {
+            position: absolute;
+            animation: geometricFloat 15s infinite ease-in-out;
+            filter: drop-shadow(0 0 10px currentColor);
+        }
+
+        .shape-triangle {
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-bottom: 17px solid var(--neon-cyan);
+        }
+
+        .shape-square {
+            width: 15px;
+            height: 15px;
+            background: var(--neon-pink);
+            transform: rotate(45deg);
+        }
+
+        .shape-circle {
+            width: 12px;
+            height: 12px;
+            border: 3px solid var(--neon-green);
+            border-radius: 50%;
+        }
+
+        .shape-hexagon {
+            width: 14px;
+            height: 14px;
+            background: var(--neon-purple);
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        }
+
+        @keyframes geometricFloat {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg) scale(1);
+                opacity: 0.4;
+            }
+            25% {
+                transform: translateY(-40px) rotate(90deg) scale(1.2);
+                opacity: 0.8;
+            }
+            50% {
+                transform: translateY(-20px) rotate(180deg) scale(0.8);
+                opacity: 1;
+            }
+            75% {
+                transform: translateY(-60px) rotate(270deg) scale(1.1);
+                opacity: 0.6;
+            }
+        }
+
+        .header {
+            text-align: center;
+            padding: 2rem 1rem;
+            background: linear-gradient(135deg, 
+                rgba(0, 255, 255, 0.15), 
+                rgba(255, 0, 255, 0.15), 
+                rgba(0, 255, 0, 0.1));
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 255, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(255, 255, 255, 0.1), 
+                transparent);
+            animation: shimmer 4s infinite;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, 
+                rgba(0, 255, 255, 0.1) 0%, 
+                transparent 70%);
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.05); }
+        }
+
+        .logo {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, 
+                var(--neon-cyan), 
+                var(--neon-pink), 
+                var(--neon-green), 
+                var(--neon-purple));
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+            animation: 
+                glow 2s ease-in-out infinite alternate, 
+                gradientShift 6s ease-in-out infinite,
+                textFloat 4s ease-in-out infinite;
+            position: relative;
+            z-index: 2;
+            text-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+        }
+
+        @keyframes glow {
+            from {
+                filter: drop-shadow(0 0 20px rgba(0, 255, 255, 0.5));
+            }
+            to {
+                filter: drop-shadow(0 0 40px rgba(0, 255, 255, 0.8));
+            }
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        @keyframes textFloat {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .apk-detail-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 2rem auto;
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            max-width: 800px;
+        }
+
+        .apk-detail-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, 
+                rgba(0, 255, 255, 0.1), 
+                rgba(255, 0, 255, 0.1), 
+                rgba(0, 255, 0, 0.1));
+            z-index: 1;
+        }
+
+        .apk-detail-card > * {
+            position: relative;
+            z-index: 2;
+        }
+
+        .apk-image {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 20px;
+            margin: 0 auto 1.5rem;
+            display: block;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+            border: 2px solid var(--neon-cyan);
+        }
+
+        .apk-title {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 2.2rem;
+            color: var(--neon-cyan);
+            margin-bottom: 1rem;
+            text-align: center;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        .apk-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+
+        .apk-stats {
+            display: flex;
+            justify-content: space-around;
+            margin: 1.5rem 0;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            min-width: 120px;
+            border: 1px solid rgba(0, 255, 255, 0.2);
+        }
+
+        .stat-label {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-value {
+            color: var(--neon-green);
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+
+        .download-btn {
+            display: block;
+            width: 100%;
+            padding: 1.2rem;
+            background: linear-gradient(45deg, 
+                var(--neon-cyan), 
+                var(--neon-pink), 
+                var(--neon-green));
+            background-size: 200% 200%;
+            border: none;
+            border-radius: 30px;
+            color: var(--dark-bg);
+            font-weight: 700;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+            animation: gradientShift 3s ease-in-out infinite;
+            margin: 2rem 0;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .download-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(255, 255, 255, 0.4), 
+                transparent);
+            transition: left 0.6s ease;
+        }
+
+        .download-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(0, 255, 0, 0.5);
+            background-position: 100% 100%;
+        }
+
+        .download-btn:hover::before {
+            left: 100%;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 3rem 1rem;
+            border-top: 1px solid rgba(0, 255, 255, 0.3);
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            margin-top: 3rem;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-icon {
+            display: inline-block;
+            width: 35px;
+            height: 35px;
+            background: linear-gradient(45deg, 
+                var(--neon-cyan), 
+                var(--neon-pink), 
+                var(--neon-green));
+            background-size: 200% 200%;
+            border-radius: 50%;
+            text-decoration: none;
+            color: var(--dark-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            animation: gradientShift 4s ease-in-out infinite;
+        }
+
+        .social-icon::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, 
+                var(--neon-green), 
+                var(--neon-purple), 
+                var(--neon-orange));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .social-icon:hover {
+            transform: scale(1.2) rotate(10deg);
+            box-shadow: 0 20px 40px rgba(0, 255, 255, 0.5);
+        }
+
+        .social-icon:hover::before {
+            opacity: 1;
+        }
+
+        .copyright {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--glass-bg);
+            border-radius: 30px;
+            padding: 2.5rem;
+            max-width: 450px;
+            width: 90%;
+            border: 2px solid var(--neon-cyan);
+            box-shadow: 
+                0 0 80px rgba(0, 255, 255, 0.5),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1),
+                0 20px 40px rgba(0, 0, 0, 0.5);
+            animation: slideIn 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(30px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .modal-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, 
+                rgba(0, 255, 255, 0.1), 
+                rgba(255, 0, 255, 0.1));
+            z-index: 1;
+        }
+
+        .modal-content > * {
+            position: relative;
+            z-index: 2;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translate(-50%, -60%);
+                opacity: 0;
+                scale: 0.8;
+            }
+            to {
+                transform: translate(-50%, -50%);
+                opacity: 1;
+                scale: 1;
+            }
+        }
+
+        .modal-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .modal-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--neon-cyan);
+            margin-bottom: 0.5rem;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        .modal-subtitle {
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        .social-links {
+            margin-bottom: 2rem;
+        }
+
+        .social-link {
+            display: block;
+            padding: 1.2rem;
+            margin-bottom: 1rem;
+            background: var(--glass-bg);
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            border-radius: 20px;
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+
+        .social-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(0, 255, 255, 0.2), 
+                transparent);
+            transition: left 0.6s ease;
+        }
+
+        .social-link:hover {
+            border-color: var(--neon-cyan);
+            background: rgba(0, 255, 255, 0.1);
+            transform: translateX(8px) scale(1.02);
+            box-shadow: 0 8px 25px rgba(0, 255, 255, 0.3);
+        }
+
+        .social-link:hover::before {
+            left: 100%;
+        }
+
+        .social-link.clicked {
+            border-color: var(--neon-green);
+            background: rgba(0, 255, 0, 0.15);
+            color: var(--neon-green);
+            animation: successPulse 1s ease-in-out;
+        }
+
+        @keyframes successPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .proceed-btn {
+            width: 100%;
+            padding: 1.2rem;
+            background: linear-gradient(45deg, 
+                var(--neon-green), 
+                var(--neon-cyan), 
+                var(--neon-purple));
+            background-size: 200% 200%;
+            border: none;
+            border-radius: 20px;
+            color: var(--dark-bg);
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+            animation: gradientShift 4s ease-in-out infinite;
+        }
+
+        .proceed-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(255, 255, 255, 0.4), 
+                transparent);
+            transition: left 0.6s ease;
+        }
+
+        .proceed-btn:disabled {
+            background: var(--text-muted);
+            cursor: not-allowed;
+            opacity: 0.5;
+            animation: none;
+        }
+
+        .proceed-btn:not(:disabled):hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(0, 255, 0, 0.5);
+            background-position: 100% 100%;
+        }
+
+        .proceed-btn:not(:disabled):hover::before {
+            left: 100%;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--text-muted);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .close-btn:hover {
+            color: var(--neon-pink);
+            background: rgba(255, 0, 255, 0.2);
+            border-color: var(--neon-pink);
+            transform: rotate(90deg) scale(1.1);
+        }
+
+        .not-found {
+            text-align: center;
+            padding: 5rem 2rem;
+        }
+
+        .not-found h1 {
+            color: var(--neon-pink);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .not-found p {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .not-found a {
+            color: var(--neon-green);
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .not-found a:hover {
+            text-decoration: underline;
+            color: var(--neon-cyan);
+        }
+
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2rem;
+            }
+            
+            .apk-detail-card {
+                padding: 1.5rem;
+                margin: 1.5rem auto;
+            }
+            
+            .apk-title {
+                font-size: 1.8rem;
+            }
+            
+            .apk-image {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .apk-stats {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .stat-item {
+                width: 100%;
+                max-width: 250px;
+            }
+            
+            .download-btn {
+                padding: 1rem;
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header {
+                padding: 1.5rem 1rem;
+            }
+            
+            .logo {
+                font-size: 1.8rem;
+            }
+            
+            .apk-detail-card {
+                padding: 1rem;
+            }
+            
+            .apk-title {
+                font-size: 1.5rem;
+            }
+            
+            .apk-description {
+                font-size: 1rem;
+            }
+            
+            .modal-content {
+                padding: 1.5rem;
+            }
+            
+            .modal-title {
+                font-size: 1.5rem;
+            }
+            
+            .social-link {
+                padding: 1rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+  <div class="background-animation" id="backgroundAnimation"><div class="particle type-1" style="left: 44.1024%; animation-delay: 2.28934s; animation-duration: 13.3074s;"></div><div class="particle type-6" style="left: 41.3122%; animation-delay: 5.51527s; animation-duration: 13.745s;"></div><div class="particle type-6" style="left: 55.6733%; animation-delay: 2.38337s; animation-duration: 13.8658s;"></div><div class="particle type-4" style="left: 22.6593%; animation-delay: 5.35482s; animation-duration: 10.2734s;"></div><div class="particle type-3" style="left: 96.0785%; animation-delay: 11.9662s; animation-duration: 8.46153s;"></div><div class="particle type-2" style="left: 82.762%; animation-delay: 2.67568s; animation-duration: 10.8759s;"></div><div class="particle type-3" style="left: 33.0288%; animation-delay: 0.839526s; animation-duration: 12.4537s;"></div><div class="particle type-3" style="left: 41.8409%; animation-delay: 0.546108s; animation-duration: 9.86987s;"></div><div class="particle type-3" style="left: 8.57926%; animation-delay: 7.33791s; animation-duration: 9.89299s;"></div><div class="particle type-6" style="left: 18.3309%; animation-delay: 11.2379s; animation-duration: 9.15728s;"></div><div class="particle type-6" style="left: 23.1943%; animation-delay: 7.23416s; animation-duration: 13.4961s;"></div><div class="particle type-4" style="left: 33.3209%; animation-delay: 3.0994s; animation-duration: 9.08413s;"></div><div class="particle type-5" style="left: 21.1722%; animation-delay: 1.90414s; animation-duration: 13.6975s;"></div><div class="particle type-5" style="left: 64.2329%; animation-delay: 6.1119s; animation-duration: 11.511s;"></div><div class="particle type-5" style="left: 6.58517%; animation-delay: 5.00614s; animation-duration: 11.2888s;"></div><div class="particle type-5" style="left: 54.1343%; animation-delay: 7.79539s; animation-duration: 9.84333s;"></div><div class="particle type-1" style="left: 85.4391%; animation-delay: 3.43306s; animation-duration: 8.69722s;"></div><div class="particle type-3" style="left: 55.4603%; animation-delay: 8.13385s; animation-duration: 11.6947s;"></div><div class="particle type-2" style="left: 35.65%; animation-delay: 7.87763s; animation-duration: 10.1737s;"></div><div class="particle type-1" style="left: 70.3316%; animation-delay: 9.92194s; animation-duration: 12.3831s;"></div><div class="particle type-1" style="left: 65.255%; animation-delay: 3.76542s; animation-duration: 9.71553s;"></div><div class="particle type-2" style="left: 74.9452%; animation-delay: 3.07475s; animation-duration: 11.4116s;"></div><div class="particle type-5" style="left: 40.9188%; animation-delay: 1.33872s; animation-duration: 11.5404s;"></div><div class="particle type-3" style="left: 56.9797%; animation-delay: 3.89932s; animation-duration: 13.5929s;"></div><div class="particle type-1" style="left: 83.9436%; animation-delay: 9.71191s; animation-duration: 9.46952s;"></div><div class="particle type-5" style="left: 90.5496%; animation-delay: 3.56935s; animation-duration: 13.4247s;"></div><div class="particle type-6" style="left: 86.4931%; animation-delay: 3.11684s; animation-duration: 12.8501s;"></div><div class="particle type-4" style="left: 78.034%; animation-delay: 3.19166s; animation-duration: 9.34639s;"></div><div class="particle type-1" style="left: 23.4484%; animation-delay: 0.836661s; animation-duration: 10.5215s;"></div><div class="particle type-1" style="left: 14.782%; animation-delay: 1.09869s; animation-duration: 12.0954s;"></div><div class="particle type-6" style="left: 83.6106%; animation-delay: 11.1574s; animation-duration: 13.9025s;"></div><div class="particle type-1" style="left: 24.3742%; animation-delay: 0.618329s; animation-duration: 10.7537s;"></div><div class="particle type-6" style="left: 19.2708%; animation-delay: 0.432053s; animation-duration: 9.67704s;"></div><div class="particle type-2" style="left: 82.0579%; animation-delay: 5.24629s; animation-duration: 8.5141s;"></div><div class="particle type-5" style="left: 63.9888%; animation-delay: 3.30838s; animation-duration: 8.635s;"></div><div class="particle type-4" style="left: 12.9601%; animation-delay: 8.86265s; animation-duration: 11.495s;"></div><div class="particle type-5" style="left: 7.98773%; animation-delay: 10.8118s; animation-duration: 10.1513s;"></div><div class="particle type-6" style="left: 58.3171%; animation-delay: 1.51317s; animation-duration: 10.7236s;"></div><div class="particle type-1" style="left: 74.9508%; animation-delay: 0.862401s; animation-duration: 8.80742s;"></div><div class="particle type-1" style="left: 55.0344%; animation-delay: 6.21084s; animation-duration: 8.69826s;"></div><div class="particle type-2" style="left: 65.4176%; animation-delay: 10.3997s; animation-duration: 13.5478s;"></div><div class="particle type-2" style="left: 80.592%; animation-delay: 5.71011s; animation-duration: 12.0022s;"></div><div class="particle type-5" style="left: 61.6083%; animation-delay: 0.847497s; animation-duration: 12.0252s;"></div><div class="particle type-2" style="left: 64.5496%; animation-delay: 5.24947s; animation-duration: 9.40336s;"></div><div class="particle type-3" style="left: 75.0317%; animation-delay: 0.756699s; animation-duration: 10.7434s;"></div><div class="particle type-4" style="left: 97.5145%; animation-delay: 7.71925s; animation-duration: 13.0751s;"></div><div class="particle type-4" style="left: 4.58869%; animation-delay: 2.5865s; animation-duration: 10.868s;"></div><div class="particle type-6" style="left: 69.7182%; animation-delay: 4.78819s; animation-duration: 8.51114s;"></div><div class="particle type-1" style="left: 30.5049%; animation-delay: 10.5581s; animation-duration: 8.61255s;"></div><div class="particle type-5" style="left: 76.1783%; animation-delay: 0.210661s; animation-duration: 9.65351s;"></div><div class="particle type-4" style="left: 91.9134%; animation-delay: 4.98173s; animation-duration: 10.7955s;"></div><div class="particle type-1" style="left: 70.4606%; animation-delay: 7.96237s; animation-duration: 8.13959s;"></div><div class="particle type-4" style="left: 93.8627%; animation-delay: 9.82523s; animation-duration: 8.37242s;"></div><div class="particle type-3" style="left: 4.15094%; animation-delay: 6.73231s; animation-duration: 9.48782s;"></div><div class="particle type-2" style="left: 95.6118%; animation-delay: 3.42672s; animation-duration: 9.31024s;"></div><div class="particle type-3" style="left: 23.2607%; animation-delay: 9.51501s; animation-duration: 12.1754s;"></div><div class="particle type-3" style="left: 72.8222%; animation-delay: 1.18719s; animation-duration: 9.9118s;"></div><div class="particle type-6" style="left: 35.31%; animation-delay: 2.08961s; animation-duration: 11.7175s;"></div><div class="particle type-5" style="left: 50.6712%; animation-delay: 1.6222s; animation-duration: 8.07215s;"></div><div class="particle type-1" style="left: 0.0201596%; animation-delay: 10.7421s; animation-duration: 10.1233s;"></div><div class="particle type-5" style="left: 2.32885%; animation-delay: 0.807548s; animation-duration: 11.4814s;"></div><div class="particle type-5" style="left: 83.2883%; animation-delay: 4.39266s; animation-duration: 11.8105s;"></div><div class="particle type-6" style="left: 50.3628%; animation-delay: 0.211638s; animation-duration: 11.7153s;"></div><div class="particle type-1" style="left: 44.7769%; animation-delay: 10.8422s; animation-duration: 12.3583s;"></div><div class="particle type-1" style="left: 16.4285%; animation-delay: 8.03776s; animation-duration: 11.3138s;"></div><div class="particle type-4" style="left: 15.1175%; animation-delay: 4.09508s; animation-duration: 10.0344s;"></div><div class="particle type-3" style="left: 89.3529%; animation-delay: 9.77861s; animation-duration: 12.5954s;"></div><div class="particle type-5" style="left: 5.48893%; animation-delay: 7.74216s; animation-duration: 8.79696s;"></div><div class="particle type-6" style="left: 28.023%; animation-delay: 5.37996s; animation-duration: 12.8128s;"></div><div class="particle type-1" style="left: 70.2887%; animation-delay: 5.82759s; animation-duration: 12.996s;"></div><div class="particle type-4" style="left: 65.0523%; animation-delay: 0.182655s; animation-duration: 9.01081s;"></div><div class="particle type-2" style="left: 93.9338%; animation-delay: 9.20534s; animation-duration: 8.68835s;"></div><div class="particle type-5" style="left: 31.7128%; animation-delay: 10.9895s; animation-duration: 11.5876s;"></div><div class="particle type-5" style="left: 58.3214%; animation-delay: 11.0029s; animation-duration: 10.9039s;"></div><div class="particle type-6" style="left: 82.0973%; animation-delay: 9.46624s; animation-duration: 9.27664s;"></div><div class="particle type-5" style="left: 29.6998%; animation-delay: 5.31985s; animation-duration: 13.8036s;"></div><div class="particle type-4" style="left: 32.6759%; animation-delay: 8.64364s; animation-duration: 11.6795s;"></div><div class="particle type-1" style="left: 4.64265%; animation-delay: 0.46364s; animation-duration: 9.87907s;"></div><div class="particle type-6" style="left: 42.295%; animation-delay: 6.03383s; animation-duration: 10.0189s;"></div><div class="particle type-6" style="left: 47.0509%; animation-delay: 1.42412s; animation-duration: 10.6174s;"></div><div class="particle type-2" style="left: 0.341548%; animation-delay: 4.77332s; animation-duration: 9.39753s;"></div><div class="particle type-6" style="left: 99.0958%; animation-delay: 11.6212s; animation-duration: 10.8875s;"></div><div class="particle type-1" style="left: 51.5836%; animation-delay: 8.31536s; animation-duration: 11.1621s;"></div><div class="particle type-3" style="left: 98.8864%; animation-delay: 7.5195s; animation-duration: 8.10703s;"></div><div class="particle type-5" style="left: 10.4571%; animation-delay: 1.86139s; animation-duration: 8.60253s;"></div><div class="particle type-4" style="left: 20.6378%; animation-delay: 0.926101s; animation-duration: 11.6506s;"></div><div class="particle type-4" style="left: 48.5526%; animation-delay: 2.13273s; animation-duration: 8.00663s;"></div><div class="particle type-4" style="left: 0.495536%; animation-delay: 5.24878s; animation-duration: 9.19081s;"></div><div class="particle type-2" style="left: 25.2461%; animation-delay: 10.7188s; animation-duration: 13.2634s;"></div><div class="particle type-2" style="left: 10.208%; animation-delay: 1.66656s; animation-duration: 8.23675s;"></div><div class="particle type-1" style="left: 35.9572%; animation-delay: 10.7377s; animation-duration: 9.43584s;"></div><div class="particle type-1" style="left: 75.565%; animation-delay: 9.63147s; animation-duration: 10.3441s;"></div><div class="particle type-2" style="left: 85.119%; animation-delay: 8.8482s; animation-duration: 10.5852s;"></div><div class="particle type-5" style="left: 81.7593%; animation-delay: 2.64533s; animation-duration: 8.96919s;"></div><div class="particle type-2" style="left: 41.1429%; animation-delay: 3.64526s; animation-duration: 9.93385s;"></div><div class="particle type-2" style="left: 98.842%; animation-delay: 7.9694s; animation-duration: 9.33398s;"></div><div class="particle type-1" style="left: 5.55717%; animation-delay: 10.2653s; animation-duration: 10.9266s;"></div><div class="particle type-1" style="left: 85.8389%; animation-delay: 5.99262s; animation-duration: 9.00959s;"></div><div class="particle type-1" style="left: 46.2119%; animation-delay: 6.51983s; animation-duration: 11.2099s;"></div><div class="particle type-5" style="left: 85.3332%; animation-delay: 2.55847s; animation-duration: 11.6971s;"></div><div class="geometric-shape shape-hexagon" style="left: 13.1898%; top: 5.1636%; animation-delay: 10.0242s; animation-duration: 16.7874s;"></div><div class="geometric-shape shape-circle" style="left: 25.5499%; top: 76.4556%; animation-delay: 6.07251s; animation-duration: 17.0153s;"></div><div class="geometric-shape shape-square" style="left: 16.3182%; top: 28.9431%; animation-delay: 4.62013s; animation-duration: 11.4664s;"></div><div class="geometric-shape shape-square" style="left: 95.0469%; top: 56.4473%; animation-delay: 10.2286s; animation-duration: 11.475s;"></div><div class="geometric-shape shape-circle" style="left: 44.7206%; top: 72.6254%; animation-delay: 1.30443s; animation-duration: 11.9877s;"></div><div class="geometric-shape shape-square" style="left: 42.1347%; top: 91.3469%; animation-delay: 0.396469s; animation-duration: 14.1462s;"></div><div class="geometric-shape shape-circle" style="left: 82.8146%; top: 52.092%; animation-delay: 12.0559s; animation-duration: 13.3253s;"></div><div class="geometric-shape shape-hexagon" style="left: 23.2643%; top: 72.3754%; animation-delay: 12.6717s; animation-duration: 14.0542s;"></div><div class="geometric-shape shape-hexagon" style="left: 56.5158%; top: 32.1772%; animation-delay: 10.8963s; animation-duration: 17.1712s;"></div><div class="geometric-shape shape-square" style="left: 65.2821%; top: 29.6859%; animation-delay: 11.4594s; animation-duration: 13.2089s;"></div><div class="geometric-shape shape-circle" style="left: 66.946%; top: 9.29311%; animation-delay: 11.6883s; animation-duration: 12.954s;"></div><div class="geometric-shape shape-hexagon" style="left: 48.2589%; top: 34.2059%; animation-delay: 10.3282s; animation-duration: 17.0811s;"></div><div class="geometric-shape shape-hexagon" style="left: 18.1845%; top: 20.7794%; animation-delay: 14.2535s; animation-duration: 11.2081s;"></div><div class="geometric-shape shape-hexagon" style="left: 69.9179%; top: 83.3238%; animation-delay: 7.373s; animation-duration: 12.5674s;"></div><div class="geometric-shape shape-triangle" style="left: 57.7846%; top: 74.972%; animation-delay: 7.54796s; animation-duration: 12.7931s;"></div><div class="geometric-shape shape-circle" style="left: 93.8582%; top: 7.6374%; animation-delay: 6.15517s; animation-duration: 14.9139s;"></div><div class="geometric-shape shape-triangle" style="left: 49.5291%; top: 12.2933%; animation-delay: 12.4598s; animation-duration: 11.2943s;"></div><div class="geometric-shape shape-triangle" style="left: 51.1528%; top: 36.9936%; animation-delay: 1.4991s; animation-duration: 10.5183s;"></div><div class="geometric-shape shape-hexagon" style="left: 75.756%; top: 58.5715%; animation-delay: 9.56802s; animation-duration: 13.5673s;"></div><div class="geometric-shape shape-square" style="left: 94.7889%; top: 63.8009%; animation-delay: 10.8923s; animation-duration: 13.4811s;"></div></div>
+
+    <header class="header">
+        <h1 class="logo">Bunny Apks Hub</h1>
+        <p class="subtitle">Download Latest Modded Apks By Bunny</p>
+    </header>
+
+    <main class="container">
+        <div class="apk-detail-card">
+            <img src="https://i.ibb.co/fGQqdPqf/Picsart-25-10-03-16-04-22-503.jpg" alt="SuperMoney" class="apk-image">
+            <h1 class="apk-title">SuperMoney</h1>
+            <p class="apk-description">Free</p>
+            
+            <div class="apk-stats">
+                <div class="stat-item">
+                    <span class="stat-label">Downloads</span>
+                    <span class="stat-value">1000+</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Size</span>
+                    <span class="stat-value">10MB</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Version</span>
+                    <span class="stat-value">1.0</span>
+                </div>
+            </div>
+            
+            <a href="https://www.mediafire.com/file/95ehf9h7ptlp8ww/Super.Money_1.0.apk/file" class="download-btn" id="downloadTrigger">Download APK</a>
+        </div>
+    </main>
+  <footer class="footer">
+        <div class="social-icons">
+            <a href=https://youtube.com/@bunnyapks?si=J5vSdqPGzKzo9PFN" class="" target="_blank"><i class="fa-brands fa-youtube" style="color: #000000;"></i></a>
+            <a href="https://t.me/BUNNYAPKS" class="" target="_blank"><i class="fa-brands fa-telegram" style="color: #000000;"></i></a>
+            <a href="https://www.instagram.com/_urbunny1_" class="s" target="_blank"><i class="fa-brands fa-instagram" style="color: #000000;"></i></a>
+        </div>
+        <p class="copyright">
+            © 2023-2025 <span style="color: #00ffae;">Bunny Apks Hub</span> | All Rights Reserved
+        </p>
+    </footer>
+    <div class="modal" id="downloadModal">
+        <div class="modal-content">
+            <button class="close-btn" id="closeModal">×</button>
+            <div class="modal-header">
+                <h3 class="modal-title">Follow to Download</h3>
+                <p class="modal-subtitle">Please follow these channels to get access to the APK:</p>
+            </div>
+            <div class="social-links">
+                <a href="https://t.me/BUNNYAPKS" class="social-link" id="telegramLink1" target="_blank">
+                    Join Telegram Channel
+                </a>
+                <a href="https://youtube.com/@bunnyapks?si=J5vSdqPGzKzo9PFN" class="social-link" id="youtubeLink" target="_blank">
+                    Follow ON Youtube
+                </a>
+                <a href="https://t.me/BUNNYAPKS" class="social-link" id="telegramLink2" target="_blank">
+                    Join Telegram Channel
+                </a>
+                <a href="/" class="social-link" id="instagramLink" target="_blank">
+                    Follow on Instagram
+                </a>
+            </div>
+            <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem;">
+                After following all channels, the download button will be enabled.
+            </p>
+            <button class="proceed-btn" id="proceedDownload" disabled="">Download APK</button>
+        </div>
+    </div>
+
+    <script>
+        function createAdvancedBackgroundAnimation() {
+            const backgroundAnimation = document.getElementById('backgroundAnimation');
+            for (let i = 0; i < 100; i++) {
+                const particle = document.createElement('div');
+                const particleType = Math.floor(Math.random() * 6) + 1;
+                particle.className = `particle type-${particleType}`;
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 12 + 's';
+                particle.style.animationDuration = (Math.random() * 6 + 8) + 's';
+                backgroundAnimation.appendChild(particle);
+            }
+
+            for (let i = 0; i < 20; i++) {
+                const shape = document.createElement('div');
+                const shapeTypes = ['triangle', 'square', 'circle', 'hexagon'];
+                const shapeType = shapeTypes[Math.floor(Math.random() * shapeTypes.length)];
+
+                shape.className = `geometric-shape shape-${shapeType}`;
+                shape.style.left = Math.random() * 100 + '%';
+                shape.style.top = Math.random() * 100 + '%';
+                shape.style.animationDelay = Math.random() * 15 + 's';
+                shape.style.animationDuration = (Math.random() * 8 + 10) + 's';
+
+                backgroundAnimation.appendChild(shape);
+            }
+        }
+
+        let clickedLinks = {
+            telegram1: false,
+            youtube: false,  
+            telegram2: false,
+            instagram: false
+        };
+
+        document.addEventListener('DOMContentLoaded', function() {
+            createAdvancedBackgroundAnimation();
+            
+            const downloadTrigger = document.getElementById('downloadTrigger');
+            const downloadModal = document.getElementById('downloadModal');
+            const closeModal = document.getElementById('closeModal');
+            const proceedDownload = document.getElementById('proceedDownload');
+            const telegramLink1 = document.getElementById('telegramLink1');
+            const telegramLink2 = document.getElementById('telegramLink2');
+            const instagramLink = document.getElementById('instagramLink');
+            const youtubeLink = document.getElementById('youtubeLink');
+            downloadTrigger.addEventListener('click', function(e) {
+                e.preventDefault();
+                downloadModal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            });
+
+            closeModal.addEventListener('click', function() {
+                downloadModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+            downloadModal.addEventListener('click', function(e) {
+                if (e.target === downloadModal) {
+                    downloadModal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+
+            telegramLink1.addEventListener('click', function() {
+                clickedLinks.telegram1 = true;
+                this.classList.add('clicked');
+                checkAllLinksClicked();
+            });
+
+            youtubeLink.addEventListener('click', function() {
+                clickedLinks.youtube = true;
+                this.classList.add('clicked');
+                checkAllLinksClicked();
+            });
+
+            telegramLink2.addEventListener('click', function() {
+                clickedLinks.telegram2 = true;
+                this.classList.add('clicked');
+                checkAllLinksClicked();
+            });
+
+            instagramLink.addEventListener('click', function() {
+                clickedLinks.instagram = true;
+                this.classList.add('clicked');
+                checkAllLinksClicked();
+            });
+
+            function checkAllLinksClicked() {
+                const allClicked = Object.values(clickedLinks).every(clicked => clicked);
+                proceedDownload.disabled = !allClicked;
+            }
+
+            proceedDownload.addEventListener('click', function() {
+                if (!this.disabled) {
+                    window.location.href = 'https://www.mediafire.com/file/95ehf9h7ptlp8ww/Super.Money_1.0.apk/file';
+                    downloadModal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    downloadModal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+    </script>
+
+
+</body></html>
